@@ -23,5 +23,7 @@ client_scripts {
 }
 
 dependencies {
-	'es_extended'
+	'es_extended',
+	'progressBars',
+	'bob74_ipl'
 }
