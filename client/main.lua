@@ -86,8 +86,8 @@ Citizen.CreateThread(function()
                     if amount >= 2500 and amount <= 10000 then
                         if unProcessedMoneySheets < 10000 and moneySheets < 10000 then
                             TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
-                            exports['progressBars']:startUI(5000, "Loading up machine...")
-                            Citizen.Wait(5000)
+                            exports['progressBars']:startUI(Config.WaitingTime, "Loading up machine...")
+                            Citizen.Wait(Config.WaitingTime)
                             unProcessedMoneySheets = unProcessedMoneySheets + amount
                             TriggerServerEvent('esx_washlab:server:removeBlackMoney', amount)
                             startProducingTimer(amount)
@@ -122,8 +122,8 @@ Citizen.CreateThread(function()
             if IsControlJustReleased(0, Keys["E"]) then
                 if moneySheets >= 50 then
                     TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
-                    exports['progressBars']:startUI(5000, "Cutting...")
-                    Citizen.Wait(5000)
+                    exports['progressBars']:startUI(Config.WaitingTime, "Cutting...")
+                    Citizen.Wait(Config.WaitingTime)
                     moneySheets = moneySheets - 100
                     cuttedMoney = cuttedMoney + 100
                     ClearPedTasksImmediately(playerPed)
