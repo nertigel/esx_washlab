@@ -6,8 +6,8 @@
 Config = {}
 
 Config.WaitingTime = 5000
-Config.TakePercent = true
-Config.WashPercent = 0.70
+Config.TakePercentage = true
+Config.WashPercentage = 0.70
 Config.ProducingTime = math.random(300, 480) -- IN SECONDS, NOT MS (!)
 Config.CountingTime = math.random(90, 120) -- IN SECONDS, NOT MS (!)
 
