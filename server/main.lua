@@ -25,7 +25,11 @@ end)
 RegisterNetEvent('esx_washlab:server:giveCleanMoney')
 AddEventHandler('esx_washlab:server:giveCleanMoney', function(amount)
     local sourcePlayer = ESX.GetPlayerFromId(source)
-
-    sourcePlayer.addMoney(amount) 
-    TriggerClientEvent('esx:showNotification', source, 'You washed ~y~€' .. amount .. '~s~.')
+    if Config.TakePercentage then
+        total = amount / Config.WashPercentage        
+    else
+        total = amount
+    end
+    sourcePlayer.addMoney(total) 
+    TriggerClientEvent('esx:showNotification', source, 'You washed ~y~€' .. total .. '~s~.')
 end)
