@@ -26,7 +26,7 @@ RegisterNetEvent('esx_washlab:server:giveCleanMoney')
 AddEventHandler('esx_washlab:server:giveCleanMoney', function(amount)
     local sourcePlayer = ESX.GetPlayerFromId(source)
     if Config.TakePercentage then
-        total = amount / Config.WashPercentage        
+        total = amount * Config.WashPercentage        
     else
         total = amount
     end
